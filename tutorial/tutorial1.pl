@@ -7,7 +7,6 @@ natural(s(X)) :- natural(X).
 %足し算
 % x + y = y (x=0のとき)
 % s(x1) + y = s(x1 + y) (x=s(x1)のとき)
-
 plus(0, Y, Y).
 plus(s(X), Y, s(Z)) :- plus(X, Y, Z).
 
@@ -15,7 +14,6 @@ plus(s(X), Y, s(Z)) :- plus(X, Y, Z).
 %x * y = 0 (x=0のとき)
 %s(x1) * y = x1 * y + y
 %Z = (x1 * y) (=W) + y
-
 times(0, Y, 0).
 times(s(X), Y, Z) :- times(X, Y, W), plus(W, Y, Z).
 

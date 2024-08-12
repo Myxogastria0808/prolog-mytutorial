@@ -31,4 +31,6 @@ check_mod(M, s(s(0))).
 check_mod(M, s(N)) :- divided(M, N, _, R), neq_zero(R), check_mod(M, N).
 
 % %素数判定
+prime(0) :- !, false.
+prime(s(0)) :- !, false.
 prime(X) :- check_mod(X, X).
